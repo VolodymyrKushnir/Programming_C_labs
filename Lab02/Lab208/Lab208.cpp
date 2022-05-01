@@ -7,15 +7,15 @@ int main()
     setlocale(LC_CTYPE, "ukr");
     double result = 0;
     int n;
-    cout << "¬вед≥ть n: ";
+    cout << "¬ведiть n: ";
     cin >> n;
     int x;
-    cout << "¬вед≥ть x: ";
+    cout << "¬ведiть x: ";
     cin >> x;
 
     for (int i = 1; i <= n; i++) {
         double a;
-        cout << "¬вед≥ть a" << "[" << i << "]: ";
+        cout << "¬ведiть a" << "[" << i << "]: ";
         cin >> a;
         if (a == x) result++;
     }

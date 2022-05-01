@@ -6,11 +6,11 @@ int main()
 {
     setlocale(LC_CTYPE, "ukr");
     int n;
-    cout << "Введіть n: ";
+    cout << "Введiть n: ";
     cin >> n;
     switch (n) {
     case 1:
-        cout << "Січень";
+        cout << "Сiчень";
         break;
     case 2:
         cout << "Лютий";
@@ -19,7 +19,7 @@ int main()
         cout << "Березень";
         break;
     case 4:
-        cout << "Квітень";
+        cout << "Квiтень";
         break;
     case 5:
         cout << "Травень";
@@ -46,6 +46,6 @@ int main()
         cout << "Грудень";
         break;
     default:
-        cout << "Невірне значення";
+        cout << "Невiрне значення";
     }
 }
