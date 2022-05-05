@@ -18,7 +18,7 @@ int main(){
 
     swap(*pf1,*pf2);
    
-    cout << *pf1 << endl;
-    cout << *pf2 << endl;
+    cout << "a:" << *pf1 << endl;
+    cout << "b:" << *pf2 << endl;
 
 }

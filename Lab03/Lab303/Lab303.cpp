@@ -17,8 +17,7 @@ int main()
 
 	*pa1 /=2;
 
-	cout << *pa1 << endl;
-	cout << *pa2 << endl;
-
+	cout << "pa1:" << *pa1 << endl;
+	cout << "pa2:" << *pa2 << endl;
 
 }
