@@ -14,7 +14,7 @@ int main()
 {
     setlocale(LC_CTYPE, "ukr");
     string s;
-    cout << "¬ведiть реченн€: ";
+    cout << "¬ведiть слово донор i слова створенi iз донора: ";
     getline(cin, s);
     cout << s << endl;
 
@@ -33,7 +33,7 @@ int main()
 
             for (int j = 0; j < temp.length(); j++) {
                 if (first_word.find(temp[j]) == string::npos) {
-                    cout << temp << "  - слово iнше\n";
+                    cout << temp << "  - слово не пiдходить\n";
                     break;
                 }
 
@@ -47,7 +47,7 @@ int main()
 
     for (int j = 0; j < temp.length(); j++) {
         if (first_word.find(temp[j]) == string::npos) {
-            cout << temp << " - слово iнше\n";
+            cout << temp << " - слово не пiдходить\n";
             break;
         }
 
