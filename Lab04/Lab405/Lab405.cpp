@@ -1,20 +1,49 @@
-// Lab405.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+
+// Дано квадратну дійсну таблицю розмірності п. Обчислити кількість максимальних елементів.
 
 #include <iostream>
 
+using namespace std;
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    setlocale(LC_CTYPE, "ukr");
+
+    int size;
+    cout << "Введiть розмiр квадратної матрицi:";
+    cin >> size;
+    const int rows = 5, cows = 5;
+
+    int array1[rows][cows];
+
+    cout << "Введiть елементи матрицi: " << rows << "x" << cows << endl;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cows; j++) {
+            cout << "[" << i + 1 << "]" << "[" << j + 1 << "] = ";
+            cin >> array1[i][j];
+        }
+    }
+
+    cout << "\nМатриця: \n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cows; j++) {
+            cout << array1[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    int max = array1[0];
+    int k = 1;
+    for (int i = 1; i < cows; i++)
+    {
+        if (array1[i] > max)
+        {
+            max = array1[i];
+            k = 1;
+        }
+        else if (array1[i] == max)
+            ++k;
+    }
+    cout << "Кiлькiсть максимальних елементiв:";
+    cout << k;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
