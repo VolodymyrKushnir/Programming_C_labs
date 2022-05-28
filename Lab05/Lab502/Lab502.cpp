@@ -14,17 +14,17 @@ int main()
     size_t first_pos;
     string first_word;
 
-    cout << "¬ведiть реченн€ на ангiйськ≥й у €кому Ї 2 i бiльше слiв: ";
+    cout << "¬ведiть реченн€ на ангiйськiй у €кому Ї 2 i бiльше слiв: ";
     getline(cin, s);
 
     first_pos = s.find(' ');
     first_word = s.substr(0, first_pos);
 
     string word;
-    cout << "¬ведiть слово що замiнить переше i останнi слова в реченнi:";
+    cout << "¬ведiть слово що замiнить перше i останнi слова в реченнi: ";
     getline(cin, word);
     s.replace(s.begin(), s.begin() + first_pos, word);
     s.replace(s.begin() + s.rfind(' ') + 1, s.end(), word);
 
-    cout << s << std::endl;
+    cout << s << endl;
 }
