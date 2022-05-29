@@ -67,6 +67,9 @@ int main()
                 cout << "\n\tМаршут номер: " << marsh[i].number;
                 cout << endl;
                 found = true;
+                cout << "\n" << "Продовжити пошук? (1 - так 0 - нi):";
+                cin >> cont;
+                cin.ignore();
             }
         }
         if (!found) {
@@ -77,6 +80,6 @@ int main()
             cin.ignore();
         }
     } while (cont != 0);
-    cout << "\n";
+    cout << "\n" << "Гарного дня :)";
     return(0);
 }
