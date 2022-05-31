@@ -9,14 +9,9 @@ int main()
 {
     setlocale(LC_CTYPE, "ukr");
 
-    int size;
-    cout << "Введiть розмiр квадратної матрицi:";
-    cin >> size;
-    int** array1 = new int* [size];
-    const int rows = size, cows = size;
+    const int rows = 5, cows = 5;
 
-    int array1[size][size];
-
+    int array1[rows][cows];
 
     cout << "Введiть елементи матрицi: " << rows << "x" << cows << endl;
     for (int i = 0; i < rows; i++) {
@@ -35,16 +30,18 @@ int main()
     }
 
     int max = array1[0][0];
-    int k = 1;
-    for (int i = 0; i < cows; i++)
+    int k = 0;
+    for (int i = 0; i < rows; i++)
     {
-        if (array1[i][i] > max)
-        {
-            max = array1[i][i];
-            k = 1;
+        for (int j = 0; j < rows; j++) {
+            if (array1[i][j] > max)
+            {
+                max = array1[i][j];
+                k = 1;
+            }
+            else if (array1[i][j] == max)
+                ++k;
         }
-        else if (array1[i] == max)
-            ++k;
     }
     cout << "Кiлькiсть максимальних елементiв:";
     cout << k;
