@@ -12,9 +12,11 @@ int main()
     int size;
     cout << "Введiть розмiр квадратної матрицi:";
     cin >> size;
-    const int rows = 5, cows = 5;
+    int** array1 = new int* [size];
+    const int rows = size, cows = size;
 
-    int array1[rows][cows];
+    int array1[size][size];
+
 
     cout << "Введiть елементи матрицi: " << rows << "x" << cows << endl;
     for (int i = 0; i < rows; i++) {
@@ -32,13 +34,13 @@ int main()
         cout << endl;
     }
 
-    int max = array1[0];
+    int max = array1[0][0];
     int k = 1;
-    for (int i = 1; i < cows; i++)
+    for (int i = 0; i < cows; i++)
     {
-        if (array1[i] > max)
+        if (array1[i][i] > max)
         {
-            max = array1[i];
+            max = array1[i][i];
             k = 1;
         }
         else if (array1[i] == max)
