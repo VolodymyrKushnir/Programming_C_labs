@@ -6,7 +6,7 @@
 #include <cmath>
 using namespace std;
 
-void zalupa(int n) {
+void obrahunok(int n) {
 	long double res;
 	double sum = 0;
 	for (int i = 1; i <= n; i++)
@@ -16,7 +16,7 @@ void zalupa(int n) {
 		sum += temp;
 	}
 	res = sin(abs(sum));
-	cout << "result=" << res << endl;
+	cout << "Результат: " << res << endl;
 }
 
 
@@ -32,6 +32,6 @@ int main()
 		cin.ignore();
 	}
 
-	zalupa(n);
+	obrahunok(n);
 
 }

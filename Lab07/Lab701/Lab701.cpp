@@ -2,7 +2,7 @@
 
 using namespace std;
 
-float PowerN(float X, int N) {
+double PowerN(double X, int N) {
     if (N == 0)
         return 1;
     if (N < 0)
