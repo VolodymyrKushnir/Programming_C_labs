@@ -11,14 +11,14 @@ int main()
     int number, counter = 0;
     string word;
 
-    ifstream fin("exemple.txt");
+    ifstream fin;
+    fin.open("exemple.txt");
     if (!fin.is_open()) {
-        cout << "File isn't found." << endl;
-        system("pause");
+        cout << "‘айл не знайдено." << endl;
         return 0;
     }
 
-    cout << "Enter number words: ";
+    cout << "¬ведiть кiлькiсть слiв: ";
     cin >> number;
     if (!number)
         return 0;
@@ -42,6 +42,5 @@ int main()
         }
     }
 
-    system("pause");
     return 0;
 }

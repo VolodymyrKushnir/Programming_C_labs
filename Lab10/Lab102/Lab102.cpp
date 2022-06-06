@@ -1,26 +1,42 @@
 #include <iostream>
-#include <fstream>
+#include <iterator>
 #include <string>
-#include <map>
-#include <regex>
+#include <fstream>
+#include <set>
+#include <algorithm>
+#include <windows.h>
 
 using namespace std;
 
+using std::string;
+
+auto length_comp = [](const string& x, const string& y)
+{
+    return x.size() > y.size();
+};
+
+using set_t = std::set<string, decltype(length_comp)>;
+using input = std::istream_iterator<string>;
+
 int main()
 {
-    ifstream ifs{ "exemple.txt" };
-    if (!ifs) return -1;
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
 
-    string text{istreambuf_iterator<char>{ifs}, {} };
-
-    map<ptrdiff_t, string> dict;
-    auto rgx_word = regex{ "\\s+" };
-    auto pb = sregex_token_iterator{ text.cbegin(), text.cend(), rgx_word, -1 };
-    auto pe = sregex_token_iterator{};
-    while (pb != pe)
+    std::ifstream ifs("exemple.txt");
+    if (!ifs.is_open())
     {
-        dict.insert_or_assign(pb->length(), pb->str());
-        ++pb;
+        std::cerr << "Файл не знайдено.\n";
+        return 1;
     }
-    if (!dict.empty()) cout << dict.begin()->second;
+    set_t set{ input(ifs), input(), length_comp };
+
+    std::cout << "Найдовше слово це: \"" << *set.begin() << "\"\n";
+
+    std::ofstream out("exemple.txt", std::ios::app);
+    if (out.is_open())
+    {
+        out << "\n""\n" "Найдовше слово це: \"" << *set.begin() << "\"\n";
+    }
+    out.close();
 }
