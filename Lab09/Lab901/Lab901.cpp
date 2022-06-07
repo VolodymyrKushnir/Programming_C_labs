@@ -7,6 +7,7 @@ struct taxi {
     int nym_taxi, stan;
     bool condit;
     string name_driv;
+    string mark_avto;
     taxi* next;
 };
 
@@ -26,6 +27,8 @@ void add_taxi(taxi*& taxi_park) {
     taxi* ptr = new taxi;
     cout << "Введiть прiзвище та iнiцiали водiя: ";
     cin >> ptr->name_driv;
+    cout << "Введiть марку автомобiля водiя: ";
+    cin >> ptr->mark_avto;
     cout << "Введiть номер таксi: ";
     my_cin(ptr->nym_taxi);
     ptr->stan = ptr->condit = 0;
@@ -83,10 +86,12 @@ void show_taxi(taxi*& taxi_v) {
     for (auto time_ptr(taxi_v); time_ptr; time_ptr = time_ptr->next)
         if (c == 1 && time_ptr->condit)
             cout << "\nНомер таксi " << time_ptr->nym_taxi <<
+            "\nМарка авто " << time_ptr->mark_avto <<
             "\nВодiй " << time_ptr->name_driv <<
             "\nНомер виклику " << time_ptr->stan << endl;
         else if (c == 2 && !time_ptr->condit)
             cout << "\nНомер таксi " << time_ptr->nym_taxi <<
+            "\nМарка авто " << time_ptr->mark_avto <<
             "\nВодiй " << time_ptr->name_driv << endl;
 }
 

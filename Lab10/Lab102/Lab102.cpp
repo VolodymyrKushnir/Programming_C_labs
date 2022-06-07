@@ -8,32 +8,32 @@
 
 using namespace std;
 
-using std::string;
+using string;
 
 auto length_comp = [](const string& x, const string& y)
 {
     return x.size() > y.size();
 };
 
-using set_t = std::set<string, decltype(length_comp)>;
-using input = std::istream_iterator<string>;
+using set_t = set<string, decltype(length_comp)>;
+using input = istream_iterator<string>;
 
 int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    std::ifstream ifs("exemple.txt");
+    ifstream ifs("exemple.txt");
     if (!ifs.is_open())
     {
-        std::cerr << "Файл не знайдено.\n";
+        cerr << "Файл не знайдено.\n";
         return 1;
     }
     set_t set{ input(ifs), input(), length_comp };
 
-    std::cout << "Найдовше слово це: \"" << *set.begin() << "\"\n";
+    cout << "Найдовше слово це: \"" << *set.begin() << "\"\n";
 
-    std::ofstream out("exemple.txt", std::ios::app);
+    ofstream out("exemple.txt", ios::app);
     if (out.is_open())
     {
         out << "\n""\n" "Найдовше слово це: \"" << *set.begin() << "\"\n";
